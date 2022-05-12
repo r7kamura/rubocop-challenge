@@ -19,7 +19,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: r7kamura/rubocop-challenge@main
+      - uses: r7kamura/rubocop-challenge@v0
 ```
 
 Now you can run rubocop-challenge via GitHub Actions page,
