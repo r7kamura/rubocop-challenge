@@ -9,16 +9,17 @@ runs:
   using: composite
   steps:
     - uses: actions/checkout@v3
-    - run: echo /vendor/ >> .git/info/exclude
-    - run: git config remote.origin.url "git@github.com:${GITHUB_REPOSITORY}.git"
-    - run: gem install rubocop_challenger
     - run: |
+        echo /vendor/ >> .git/info/exclude
+        git config remote.origin.url "git@github.com:${GITHUB_REPOSITORY}.git"
+        gem install rubocop_challenger
         rubocop_challenger go \
           --base-branch="{{ inputs.base_branch }}" \
           --email="${GITHUB_ACTOR}@users.noreply.github.com" \
           --name="${GITHUB_ACTOR}"
       env:
         GITHUB_ACCESS_TOKEN: "${{ github.token }}"
+      shell: bash
 branding:
   color: red
   icon: git-pull-request
