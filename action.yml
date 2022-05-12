@@ -1,0 +1,15 @@
+name: rubocop-challenge
+description: Run rubocop-challenger.
+inputs:
+  base_branch:
+    description: Pull request base branch.
+    required: false
+    default: main
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.base_branch }}
+branding:
+  color: red
+  icon: git-pull-request
