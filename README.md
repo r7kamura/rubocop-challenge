@@ -40,7 +40,7 @@ gh workflow run rubocop-challenge
 
 - Mode to select deletion target.
 - default: `"random"`
-- You can choose from the following options:
+- Choose from the following options:
   - `"least_occurrence"`
   - `"most_occurrence"`
   - `"random"`
