@@ -35,3 +35,12 @@ gh workflow run rubocop-challenge
 
 - Pull request base branch.
 - default: `"main"`
+
+### `mode`
+
+- Mode to select deletion target.
+- default: `"random"`
+- You can choose from the following options:
+  - `"least_occurrence"`
+  - `"most_occurrence"`
+  - `"random"`
