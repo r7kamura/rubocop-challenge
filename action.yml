@@ -6,12 +6,19 @@ inputs:
     required: false
     default: main
 runs:
-  using: docker
-  image: Dockerfile
-  args:
-    - ${{ inputs.base_branch }}
-  env:
-    GITHUB_ACCESS_TOKEN: "${{ github.token }}"
+  using: composite
+  steps:
+    - uses: actions/checkout@v3
+    - run: echo /vendor/ >> .git/info/exclude
+    - run: git config remote.origin.url "git@github.com:${GITHUB_REPOSITORY}.git"
+    - run: gem install rubocop_challenger
+    - run: |
+        rubocop_challenger go \
+          --base-branch="{{ inputs.base_branch }}" \
+          --email="${GITHUB_ACTOR}@users.noreply.github.com" \
+          --name="${GITHUB_ACTOR}"
+      env:
+        GITHUB_ACCESS_TOKEN: "${{ github.token }}"
 branding:
   color: red
   icon: git-pull-request
