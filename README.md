@@ -28,3 +28,10 @@ or [GitHub CLI](https://cli.github.com/) like this:
 ```
 gh workflow run rubocop-challenge
 ```
+
+## Inputs
+
+### `base_branch`
+
+- Pull request base branch.
+- default: `"main"`
