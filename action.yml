@@ -10,7 +10,6 @@ runs:
   image: Dockerfile
   args:
     - ${{ inputs.base_branch }}
-    - ${{ github.token }}
 branding:
   color: red
   icon: git-pull-request
