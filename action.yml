@@ -12,8 +12,8 @@ runs:
     - run: |
         echo /vendor/ >> .git/info/exclude
         git config remote.origin.url "git@github.com:${GITHUB_REPOSITORY}.git"
-        gem install rubocop_challenger
-        rubocop_challenger go \
+        gem install --install-dir=vendor/bundle --no-document rubocop_challenger
+        vendor/bundle/bin/rubocop_challenger go \
           --base-branch="{{ inputs.base_branch }}" \
           --email="${GITHUB_ACTOR}@users.noreply.github.com" \
           --name="${GITHUB_ACTOR}"
