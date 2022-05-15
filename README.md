@@ -5,7 +5,7 @@ to run [rubocop-challenger](https://github.com/ryz310/rubocop_challenger).
 
 ## Usage
 
-An example workflow to run rubocop-challenger via
+An example workflow to run rubocop-challenge via
 [manual running](https://docs.github.com/en//actions/managing-workflow-runs/manually-running-a-workflow).
 
 ```yaml
